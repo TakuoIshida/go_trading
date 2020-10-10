@@ -10,6 +10,7 @@ import (
 type ConfigList struct {
 	Apikey    string
 	ApiSecret string
+	Logfile   string
 }
 
 var Config ConfigList
@@ -23,5 +24,6 @@ func init() {
 	Config = ConfigList{
 		Apikey:    cfg.Section("bitflyer").Key("api_key").String(),
 		ApiSecret: cfg.Section("bitflyer").Key("api_secret").String(),
+		Logfile:   cfg.Section("bitflyer").Key("log_file").String(),
 	}
 }
